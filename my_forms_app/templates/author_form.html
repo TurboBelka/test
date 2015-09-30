@@ -1,0 +1,19 @@
+{% extends "base_template.html" %}
+{% block title_app %}
+    {{ title }}
+{% endblock %}
+{% block body_app %}
+<form action="" method="post" class="form-inline">
+    <div class="form-group">
+    {% csrf_token %}
+    {{ formset.management_form }}
+        {% for form in formset %}
+            {{ form.as_p }}
+        <br />
+
+        {% endfor %}
+
+     <input type="submit" value="Submit" />
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base_template.html" %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% load static %}
+{% block links %}
+   <!-- <link rel="stylesheet" href="{% static 'css/style_list_article.css' %}"/> -->
+{% endblock %}
+{% block body_app %}
+{% if article_list %}
+    <table class="table table-hover">
+        {{ article_list.errors }}
+        {% for article in article_list %}
+            <tr>
+                <td class="first_col">
+                    <div class="author">
+                        {{ article.reporter }}
+                    </div>
+                    <div class="pub_date">
+                        {{ article.pub_date }}
+                    </div>
+                </td>
+                <td class="second_col">
+                    <div class="headline">
+                        <p>{{ article.headline }}</p>
+                    </div>
+                    <div class="content">
+                        <p>{{ article.content }}</p>
+                    </div>
+                </td>
+                <td class="del_col">
+                     <a class="del" href="{% url 'my_forms_app:delete_article' article.id %}">
+                     <img src="{% static 'images/statusx_op.gif' %}" title="Delete"
+                          alt="Delete article" />
+                     </a>
+                </td>
+
+            </tr>
+        {% endfor %}
+        <a href="{% url 'my_forms_app:delete_all' %}" class="btn btn-default">
+                     Delete_all_articles</a>
+    </table>
+{% else %}
+    <p>The list of articles is empty.</p>
+{% endif %}
+{% endblock %}
