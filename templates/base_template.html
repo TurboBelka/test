@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% block title_app %}
+        {% endblock %}
+    </title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'css/style_base.css' %}"/>
+    <script type="text/javascript" src="{%static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/change_background.js' %}"></script> -->
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    {% block links %}
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div id="menu_list" class="container-fluid">
+        <div class="collapse navbar-collapse">
+        <ul id="menu" class="nav navbar-nav">
+            {% for k, v in my_menus.items %}
+
+            <li {% if k == title %} class="active" {% endif %}>
+                <a  href="{{ v }}">{{ k }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <p class="navbar-text navbar-right">By
+            <a href="#" class="navbar-link">dasko_belko</a>
+        </p>
+        </div>
+    </div>
+</nav>
+<div id="body_div" class="container-fluid">
+    {% block body_app %}
+    {% endblock %}
+</div>
+<div id="foot" class="panel-footer">
+    <footer>
+        {% now "Y" %}
+    </footer>
+</div>
+</body>
+
+</html>
