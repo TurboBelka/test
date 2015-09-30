@@ -1,0 +1,26 @@
+{% extends "base_template.html" %}
+{% block title %}
+   {{ title }}
+{% endblock %}
+{% block body_app %}
+<script>
+    document.getElementById("3").style = "color:green"
+</script>
+{% if city_list %}
+    <ul>
+
+            {% for city in city_list %}
+
+           <li>
+                  <a href="{% url 'app_adress_book:adress' city.id %}">
+                    {{ city.city_name }}
+                  </a>
+               <a href="{% url 'app_adress_book:person_in_city' city.id %}">
+               See all people</a>
+            </li>
+         {% endfor %}
+    </ul>
+{% else %}
+    <p>No apps are available.</p>
+{% endif %}
+{% endblock %}

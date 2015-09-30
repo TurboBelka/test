@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+{% block title %}
+   {{ title }}
+{% endblock %}
+{% block body_app %}
+<script>
+    document.getElementById("3").style = "color:green"
+</script>
+{% if person_list %}
+    <ul>
+            {% for person in person_list %}
+            <li>
+                {{ person.first_name }} {{ person.last_name }}
+                {{ person.date_birth }}
+            </li>
+         {% endfor %}
+    </ul>
+{% else %}
+    <p>No apps are available.</p>
+{% endif %}
+{% endblock %}
