@@ -1,0 +1,27 @@
+div.author{
+   color:  #2B587A;
+}
+
+div.pub_date{
+    font-size: small;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.pub_date{
+    padding: 0px;
+    margin: 0px;
+}
+
+td.first_col{
+    padding: 0px 15px 10px 0px;
+}
+
+td.del_col{
+    position: relative;
+}
+
+a.del{
+    position: absolute;
+    top: 15px;
+}
