@@ -1,0 +1,83 @@
+{% extends "base_template.html" %}
+{% block title_app %}
+    {{ title }}
+{% endblock %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/style_calc.css' %}"/>
+    <script type="text/javascript" src="{% static 'js/calc_func.js' %}"></script>
+{% endblock %}
+{% block body_app %}
+<body>
+
+        <div>
+            <input id="state" type="text"  />
+        </div>
+    <div class="btn-toolbar">
+        <div>
+            <p id="clear" class="btn btn-default" onclick="ClearAll()">C</p>
+        </div>
+        <div>
+            <p id="div" class="btn btn-default" onclick="SetAction('/')">/</p>
+        </div>
+        <div>
+            <p id="mult" class="btn btn-default" onclick="SetAction('*')">*</p>
+        </div>
+        <div>
+            <p id="minus" class="btn btn-default" onclick="SetAction('-')">-</p>
+        </div>
+    </div>
+    <div class="btn-toolbar">
+        <div class="btn btn-default set_value">
+            <p>7</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>8</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>9</p>
+        </div>
+
+    </div>
+    <div class="btn-toolbar">
+        <div class="btn btn-default set_value">
+            <p>4</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>5</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>6</p>
+        </div>
+    </div>
+    <div class="btn-toolbar">
+        <div class="btn btn-default set_value">
+            <p>1</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>2</p>
+        </div>
+        <div class="btn btn-default set_value">
+            <p>3</p>
+        </div>
+    </div>
+    <div class="btn-toolbar">
+        <div class="btn btn-default set_value">
+            <p>0</p>
+        </div>
+        <div class="set_value btn btn-default">
+            <p>.</p>
+        </div>
+        <div>
+            <p class="btn btn-default" onclick="SetAction('+')">+</p>
+        </div>
+         <div>
+            <p class="btn btn-default" onclick="DoIt()">=</p>
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}
+</html>
