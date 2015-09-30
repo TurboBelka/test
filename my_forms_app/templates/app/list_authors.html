@@ -1,0 +1,31 @@
+{% extends "base_template.html" %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+{% block body_app %}
+{% if author_list %}
+    <ul class="list-group">
+        {{ author_list.errors }}
+        {% for author in author_list %}
+            <li class="list-group-item">
+                <span class="badge">
+
+                    <a href="{% url 'my_forms_app:add_article' %}">
+                        <span class="glyphicon glyphicon-plus"></span>
+                   </a>
+
+                </span>
+                    {{ author.first_name }}
+                    {{ author.last_name }}
+                    {{ author.birth_date }}
+            </li>
+        {% endfor %}
+
+
+    </ul>
+        <a href="{% url 'my_forms_app:list_articles' %}" class="btn btn-default">
+                     All_article</a>
+{% else %}
+    <p>The list of authors is empty.</p>
+{% endif %}
+{% endblock %}
