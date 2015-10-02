@@ -44,7 +44,9 @@ INSTALLED_APPS = (
     'test_form_app',
     'test_model_form',
     'my_forms_app',
+    'app_note',
     'my_calc',
+
 )
 
 MIDDLEWARE_CLASSES = (
